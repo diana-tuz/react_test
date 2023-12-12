@@ -1,7 +1,14 @@
-<thead>
-  <tr>
-    <th>Заголовок колонки 1</th>
-    <th>Заголовок колонки 2</th>
-    <th>Заголовок колонки 3</th>
-  </tr>
-</thead>;
+import React from "react";
+
+export const TableHead = () => (
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Price</th>
+      <th>Remained in stock</th>
+      <th>Color</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+);
