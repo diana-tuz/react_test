@@ -1,40 +1,17 @@
 import { useState } from "react";
 import "./App.css";
-import { GoodsTable } from "./components/GoodsTable";
-import { goods } from "./goods";
-import { Filter } from "./components/Filter";
+import { List } from "./components/List";
+import { Add } from "./components/Add";
 
 function App() {
-  const type = ["vegetables", "fruits", "greens"];
-  const color = ["red", "green", "yellow"];
+  const goods = ["Cucumbers", "Apples", "Potatoes", "Bananas", "Onions"];
 
-  const [preparedGoods, setPreparedGoods] = useState(goods);
+  const [arrayGoods, setArrayGoods] = useState(goods);
 
-  const getFilteredGoods = (selectType) => {
-    if (selectType === "default") {
-      setPreparedGoods(goods);
-    } else{   
-      const filteredGoods = goods.filter(good => good.type === selectType);
-      setPreparedGoods(filteredGoods);
-    }
-  }
-
-  const getFilterByColor = (selectColor) => {
-    if (selectColor === "default") {
-      setPreparedGoods(goods);
-    } else {
-      const filteredGoods = goods.filter(good => good.color === selectColor);
-      setPreparedGoods(filteredGoods);
-    }
-  }
-
-  return (
-    <div className="App">
-      <Filter category={type} getFilteredGoods={getFilteredGoods} />
-      <Filter category={color} getFilteredGoods={getFilterByColor} />
-      <GoodsTable goods={preparedGoods} />
-    </div>
-  );
+  return <div className="App">
+    <Add setArrayGoods={setArrayGoods}/>
+    <List goods={arrayGoods} setGoods={setArrayGoods}/>
+  </div>;
 }
 
 export default App;

@@ -2,3 +2,20 @@
  background-color: pink;
 }
 
+.list-item{
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+}
+
+.list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-input{
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+}
